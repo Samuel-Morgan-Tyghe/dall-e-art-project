@@ -24,10 +24,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={promptUrl ?? logo} className="App-logo" alt="logo" />
         <p>{!promptUrl ? "Loading..." : <p>{promptUrl}</p>}</p>
         {promptUrl && <image src={promptUrl} alt={promptUrl}></image>}
-        {promptUrl && <div style={{ background: ` url(${promptUrl})` }}></div>}
+        {promptUrl && (
+          <div
+            style={{
+              background: `black url(${promptUrl}) no-repeat fixed center`,
+              width: "500px",
+              height: "500px",
+            }}
+          ></div>
+        )}
         <form onSubmit={onSubmit}>
           <input
             type="text"
