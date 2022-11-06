@@ -10,7 +10,7 @@ function App() {
 
   async function onSubmit(event) {
     event.preventDefault();
-    fetch("/api")
+    fetch("/api" + "?" + "prompt=" + promptInput)
       .then((res) => {
         return res.json();
       })
