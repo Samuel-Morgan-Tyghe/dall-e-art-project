@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   const [data, setData] = useState(null);
-
+  console.log(data);
   useEffect(() => {
     fetch("/api")
       .then((res) => {
