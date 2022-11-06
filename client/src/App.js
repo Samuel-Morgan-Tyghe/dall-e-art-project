@@ -22,7 +22,6 @@ function App() {
       })
       .then((promptUrl) => setPromptUrl(promptUrl.message))
       .catch((e) => console.log(e));
-    const promptUrl = await response.json();
     setPromptInput("");
   }
   return (
