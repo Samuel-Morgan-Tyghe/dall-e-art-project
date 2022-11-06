@@ -10,41 +10,15 @@ function App() {
 
   async function onSubmit(event) {
     event.preventDefault();
-    const response = await fetch("/api")
-      // .then((res) => {
-      //   console.log("🚀 ~ file: App.js ~ line 19 ~ .then ~ res", res);
-      //   return res.json();
-      // })
-      // .then((response) => {
-      //   console.log(response.json());
-      //   console.log(promptUrl);
-      //   setPromptUrl(JSON.stringify(response?.imageUrl ?? response?.message));
-      // })
-      .then((data) => {
-        return data.json();
+    fetch("/api")
+      .then((res) => {
+        return res.json();
       })
-      .then((post) => {
-        console.log(
-          "🚀 ~ file: App.js ~ line 27 ~ .then ~ post",
-          JSON.stringify(post)
-        );
+      .then((response) => {
+        setPromptUrl(response?.imageUrl);
       })
       .catch((e) => console.log(e));
 
-    console.log(response);
-    console.log(response?.body);
-    console.log(response?.message);
-    // await fetch("/api")
-    //   .then((res) => {
-    //     console.log("🚀 ~ file: App.js ~ line 19 ~ .then ~ res", res);
-    //     return res.json();
-    //   })
-    //   .then((response) => {
-    //     console.log(response);
-    //     console.log(promptUrl);
-    //     setPromptUrl(JSON.stringify(response?.imageUrl ?? response?.message));
-    //   })
-    //   .catch((e) => console.log(e));
     setPromptInput("");
   }
   return (

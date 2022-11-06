@@ -31,7 +31,7 @@ app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
-  // var query = require("/api/").parse(req.url, true).query;
+  var query = require("/api/").parse(req.url, true).query;
 
   // const response = await openai.createImage({
   //   prompt: req.prompt,
@@ -41,10 +41,10 @@ app.get("/api", (req, res) => {
   // const image_url = response.data.data[0].url;
 
   // res.json({ imageUrl: image_url });
-  // res.json({ imageUrl: query });
+  // return res.json({ imageUrl: query });
   // res.json({ message: "req.prompt" });
   // res.send("Hello World!");
-  return res.send(200, { response: "response 1" });
+  return res.send(200, { imageUrl: query });
 });
 
 // All other GET requests not handled before will return our React app
