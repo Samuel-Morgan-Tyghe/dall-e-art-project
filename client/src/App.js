@@ -26,7 +26,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>{!promptUrl ? "Loading..." : <p>{promptUrl}</p>}</p>
-        {promptUrl && <image src={promptUrl} alt={promptUrl} />}
+        {promptUrl && <image src={promptUrl} alt={promptUrl}></image>}
+        {promptUrl && <div style={`background: color url(${promptUrl})`}></div>}
+        <div style="background: color url('path')"></div>
         <form onSubmit={onSubmit}>
           <input
             type="text"
