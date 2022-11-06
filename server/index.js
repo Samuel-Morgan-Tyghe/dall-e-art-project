@@ -32,7 +32,7 @@ app.use(express.static(path.resolve(__dirname, "../client/build")));
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
   console.log("🚀 ~ file: index.js ~ line 34 ~ app.get ~ req", req);
-  console.log("🚀 ~ file: index.js ~ line 35 ~ app.get ~ query", query);
+
   const prompt = req?.query?.prompt;
 
   // const response = await openai.createImage({
