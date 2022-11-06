@@ -43,7 +43,7 @@ function App() {
             value={promptInput}
             onChange={(e) => setPromptInput(e.target.value)}
           />
-          <input type="submit" value="Generate names" />
+          <input type="submit" value="Generate Images" />
         </form>{" "}
       </header>
     </div>
