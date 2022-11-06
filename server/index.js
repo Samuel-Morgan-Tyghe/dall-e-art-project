@@ -30,18 +30,24 @@ app.listen(PORT, () => {
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 // Handle GET requests to /api route
-app.get("/api", async (req, res) => {
-  const response = await openai.createImage({
-    prompt: req.prompt,
-    n: 1,
-    size: "1024x1024",
-  });
-  const image_url = response.data.data[0].url;
+app.get("/api", (req, res) => {
+  // var query = require("/api/").parse(req.url, true).query;
 
-  res.json({ message: image_url });
+  // const response = await openai.createImage({
+  //   prompt: req.prompt,
+  //   n: 1,
+  //   size: "1024x1024",
+  // });
+  // const image_url = response.data.data[0].url;
+
+  // res.json({ imageUrl: image_url });
+  // res.json({ imageUrl: query });
+  // res.json({ message: "req.prompt" });
+  // res.send("Hello World!");
+  return res.send(200, { response: "response 1" });
 });
 
 // All other GET requests not handled before will return our React app
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+// });
